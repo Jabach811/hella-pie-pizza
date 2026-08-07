@@ -1,0 +1,82 @@
+:root {
+  --cream: #f6f1e7;
+  --brick: #c9362b;
+  --charcoal: #211f33;
+  --teal: #2bbfae;
+  --yellow: #ffd319;
+  --font-display: "Bungee", sans-serif;
+  --font-body: "Archivo", sans-serif;
+  --font-digits: "VT323", monospace;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--charcoal);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.55;
+}
+h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: 1.15; }
+h2 { font-size: clamp(26px, 4vw, 40px); color: var(--brick); }
+img { max-width: 100%; display: block; }
+a { color: var(--teal); }
+
+/* Header */
+.site-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 24px; background: var(--cream);
+  border-bottom: 3px solid var(--charcoal);
+  position: sticky; top: 0; z-index: 10;
+}
+.wordmark { font-family: var(--font-display); font-size: 22px; color: var(--brick); text-decoration: none; }
+.site-nav { display: flex; gap: 22px; align-items: center; }
+.site-nav a { color: var(--charcoal); text-decoration: none; font-weight: 700; }
+.nav-toggle { display: none; background: none; border: 0; font-size: 26px; color: var(--charcoal); }
+
+/* Arcade kit — the complete costume */
+.btn-order {
+  font-family: var(--font-display); font-size: 15px;
+  color: #fff !important; background: var(--brick);
+  padding: 12px 22px; border-radius: 8px; text-decoration: none;
+  box-shadow: 0 0 18px rgba(201,54,43,.8), 0 0 40px rgba(201,54,43,.35);
+}
+.open-sign {
+  font-family: var(--font-digits); font-size: 26px;
+  color: var(--teal); text-shadow: 0 0 10px rgba(43,191,174,.9);
+}
+.open-sign.closed { color: var(--brick); text-shadow: 0 0 10px rgba(201,54,43,.9); }
+.digits { font-family: var(--font-digits); color: var(--brick); }
+.checker {
+  height: 14px; border: 0; margin: 0;
+  background: repeating-linear-gradient(90deg, var(--brick) 0 14px, var(--cream) 14px 28px);
+}
+
+/* Sections */
+section { padding: 56px 24px; max-width: 1080px; margin: 0 auto; }
+.dark { background: var(--charcoal); color: #fff; max-width: none; }
+.dark > .inner { max-width: 1080px; margin: 0 auto; }
+.dark h2 { color: var(--yellow); }
+
+/* Footer */
+.site-footer { background: var(--charcoal); color: #b9b6d0; text-align: center; padding: 28px 24px; font-size: 14px; }
+.site-footer a { color: var(--teal); }
+
+/* Sticky mobile order bar (shown via script on menu page) */
+.sticky-order { display: none; }
+
+/* Mobile */
+@media (max-width: 720px) {
+  .nav-toggle { display: block; }
+  .site-nav {
+    display: none; position: absolute; top: 100%; left: 0; right: 0;
+    background: var(--cream); border-bottom: 3px solid var(--charcoal);
+    flex-direction: column; padding: 18px; text-align: center;
+  }
+  .site-nav.open { display: flex; }
+  .sticky-order.on {
+    display: block; position: fixed; bottom: 0; left: 0; right: 0;
+    background: var(--charcoal); padding: 12px; text-align: center; z-index: 20;
+  }
+}
