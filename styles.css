@@ -103,3 +103,26 @@ cite { display: block; margin-top: 8px; font-size: 14px; color: #777; }
   .hits-grid { grid-template-columns: 1fr 1fr; }
   .story-grid img { order: 2; }
 }
+
+/* Menu page */
+.lineup h1 { color: #fff; font-size: clamp(28px, 4vw, 44px); }
+.jump a { color: var(--teal); text-decoration: none; font-size: 20px; }
+.ticket-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.ticket {
+  background: #fff; border: 2px solid var(--charcoal); border-radius: 12px;
+  overflow: hidden; box-shadow: 5px 5px 0 var(--charcoal);
+}
+.ticket img { height: 170px; width: 100%; object-fit: cover; }
+.ticket-body { padding: 14px; }
+.ticket-top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.ticket h3 { font-size: 15px; margin: 0; }
+.ticket .price { font-size: 21px; white-space: nowrap; }
+.ticket p { font-size: 14px; color: #555; margin: 6px 0 10px; border-top: 2px dashed #ccc; padding-top: 10px; }
+.badge { font-family: var(--font-display); font-size: 10px; background: var(--yellow); padding: 4px 8px; border-radius: 4px; }
+.deal { font-size: 22px; margin-top: 28px; text-align: center; }
+.rows { list-style: none; padding: 0; max-width: 560px; }
+.rows li { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #ddd; }
+.rows .digits { font-size: 20px; }
+
+@media (max-width: 900px) { .ticket-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .ticket-grid { grid-template-columns: 1fr; } }
