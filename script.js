@@ -14,11 +14,11 @@ if (sign) {
   const now = new Date(new Date().toLocaleString("en-US", { timeZone: "America/Los_Angeles" }));
   const today = HOURS[now.getDay()];
   const hr = now.getHours() + now.getMinutes() / 60;
-  const fmt = h => (h > 12 ? h - 12 : h) + (h >= 12 ? "PM" : "AM");
+  const fmt = h => (h > 12 ? h - 12 : h) + (h >= 12 ? "pm" : "am");
   if (today && hr >= today.open && hr < today.close) {
-    sign.textContent = "● OPEN TIL " + fmt(today.close);
+    sign.textContent = "Open now · closes at " + fmt(today.close);
   } else {
-    sign.textContent = "● CLOSED — SEE HOURS";
+    sign.textContent = "Closed right now — hours below";
     sign.classList.add("closed");
   }
 }
